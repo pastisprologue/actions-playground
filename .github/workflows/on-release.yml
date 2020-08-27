@@ -1,0 +1,21 @@
+name: CI-on-release
+
+on: [release, workflow_dispatch]
+
+jobs:
+  update_version_info:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        path: ./longburn/
+        submodules: recursive
+        token: a2403a4725d67fd765d4876c645ad859468c8571
+    - name: Update Version info
+      run: ./src/release.sh
+    - name: stage
+      run: git add src/config/sdk_config.h
+    - name: commit
+      run: git commit -m "post Release version info update"
+    - name: push
+      run: git push origin HEAD:master
