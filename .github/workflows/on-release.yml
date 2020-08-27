@@ -10,7 +10,9 @@ jobs:
     - name: Update Version info
       run: ./src/release.sh
     - name: switch from https to ssh
-      run: git remote set-url origin ${{ secrets.ssh }}
+      run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
     - name: stage
       run: git add src/config/sdk_config.h
     - name: commit
