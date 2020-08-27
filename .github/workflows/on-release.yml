@@ -11,8 +11,8 @@ jobs:
       run: ./src/release.sh
     - name: switch from https to ssh
       run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "michael@sparkgrills.com"
+          git config --global user.name "Michael Chiasson"
     - name: stage
       run: git add src/config/sdk_config.h
     - name: commit
