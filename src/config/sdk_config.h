@@ -14,7 +14,7 @@
 
 
 #ifndef APP_VERSION_PATCH
-#define APP_VERSION_PATCH 21
+#define APP_VERSION_PATCH 22
 #endif
 
 // <s> APP_VERSION_PRERELEASE - Prerelease, eg. "-1.alpha"
