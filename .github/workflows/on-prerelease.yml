@@ -1,0 +1,24 @@
+name: CI-on-prerelease
+
+on: 
+    release:
+        types: [prereleased]
+
+jobs:
+  update_version_info:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update Version info
+      run: ./src/prerelease.sh
+    - name: switch from https to ssh
+      run: |
+          git config --global user.email "michael@sparkgrills.com"
+          git config --global user.name "Michael Chiasson"
+    - name: stage
+      run: git add src/config/sdk_config.h
+    - name: commit
+      run: git commit -m "post Release version info update"
+    - name: push
+      run: git push
+
