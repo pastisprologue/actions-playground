@@ -23,7 +23,7 @@
 // <i> This string might be normalized at run-time to not contain characters
 // <i> illegal in Semantic Versioning.
 #ifndef APP_VERSION_PRERELEASE
-#define APP_VERSION_PRERELEASE "-dev"""
+#define APP_VERSION_PRERELEASE "-rc1"""
 #endif
 
 // <s> APP_VERSION_METADATA - Metadata, e.g. "+some-string.01-01-2018-23-59-59"
