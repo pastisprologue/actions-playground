@@ -18,7 +18,9 @@ jobs:
           git fetch
     - name: get branch name?
       run: |
-          echo "$BRANCH"
-          echo "$GITHUB_REF"
-          echo "$GITHUB_BASE_REF"
+          echo "github: ${{ github }}"
+          echo "github.event: ${{ github.event }}"
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.payload: ${{ github.payload }}"
+          echo "GITHUB_REF: $GITHUB_REF"
 
