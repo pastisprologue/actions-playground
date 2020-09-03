@@ -15,6 +15,7 @@ jobs:
       run: |
           git config --global user.email "michael@sparkgrills.com"
           git config --global user.name "Michael Chiasson"
+          git branch --contains ${GITHUB_REF##*/}
     - name: get branch name?
       run: |
           echo "$GITHUB_REF"
