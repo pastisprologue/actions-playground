@@ -21,8 +21,10 @@ jobs:
           AUTHOR: ${{ github.event.author.login }}
           TGT: ${{ github.event.target_commitish }}
       run: |
-          echo "github.event.author: $AUTHOR"
-          echo "github.event.target_commitish: $TGT"
+          echo "github: ${{ github }}"
+          echo "github.event: ${{ github.event }}"
+          echo "author: $AUTHOR"
+          echo "target_commitish: $TGT"
           echo "github.ref: ${{ github.ref }}"
           echo "github.payload: ${{ github.payload }}"
           echo "GITHUB_REF: $GITHUB_REF"

@@ -26,6 +26,6 @@ sed -i'.bak' "s/^#define APP_VERSION_PATCH.*/#define APP_VERSION_PATCH $NEW_PATC
 sed -i'.bak' "s/^#define APP_VERSION_PRERELEASE.*/#define APP_VERSION_PRERELEASE \"-rc$NEW_PRSN\"/g" src/config/sdk_config.h
 
 FETCH=$(git fetch)
-BRANCH=$(git branch --contains ${GITHUB_REF##*/})
+BRANCH=$(git log --pretty=%d --decorate | sed -n 1p | awk '{print substr($3, 1, length($3)-1)}')
 echo "Fetch: $FETCH"
 echo "Branch: $BRANCH"
