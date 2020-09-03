@@ -25,3 +25,8 @@ fi
 sed -i'.bak' "s/^#define APP_VERSION_PATCH.*/#define APP_VERSION_PATCH $NEW_PATCH/g" src/config/sdk_config.h 
 sed -i'.bak' "s/^#define APP_VERSION_PRERELEASE.*/#define APP_VERSION_PRERELEASE \"-rc$NEW_PRSN\"/g" src/config/sdk_config.h
 
+git config --global user.email "michael@sparkgrills.com"
+git config --global user.name "Michael Chiasson"
+git fetch
+BRANCH=git branch --contains ${GITHUB_REF##*/}
+echo $BRANCH
