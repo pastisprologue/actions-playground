@@ -15,10 +15,6 @@ jobs:
       run: |
           git config --global user.email "michael@sparkgrills.com"
           git config --global user.name "Michael Chiasson"
-    - name: stage
-      run: git add src/config/sdk_config.h
-    - name: commit
-      run: git commit -m "post Release version info update"
-    - name: push
-      run: git push
+    - name: get branch name?
+      run: echo ${GITHUB_REF##*/}
 
