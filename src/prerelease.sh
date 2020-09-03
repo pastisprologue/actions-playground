@@ -28,5 +28,5 @@ sed -i'.bak' "s/^#define APP_VERSION_PRERELEASE.*/#define APP_VERSION_PRERELEASE
 git config --global user.email "michael@sparkgrills.com"
 git config --global user.name "Michael Chiasson"
 git fetch
-BRANCH=git branch --contains ${GITHUB_REF##*/}
+BRANCH=$(git branch --contains ${GITHUB_REF##*/})
 echo $BRANCH
