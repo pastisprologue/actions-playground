@@ -26,6 +26,12 @@ sed -i'.bak' "s/^#define APP_VERSION_PATCH.*/#define APP_VERSION_PATCH $NEW_PATC
 sed -i'.bak' "s/^#define APP_VERSION_PRERELEASE.*/#define APP_VERSION_PRERELEASE \"-rc$NEW_PRSN\"/g" src/config/sdk_config.h
 
 FETCH=$(git fetch)
+GO=$(git log --pretty=%d --decorate)
+SO=$(echo "$GO" | sed -n 1p)
+AO=$(echo "$SO" | awk '{print substr($3, 1, length($3)-1}')
 BRANCH=$(git log --pretty=%d --decorate | sed -n 1p | awk '{print substr($3, 1, length($3)-1)}')
 echo "Fetch: $FETCH"
+echo "GO: $GO"
+echo "SO: $SO"
+echo "AO: $AO"
 echo "Branch: $BRANCH"
