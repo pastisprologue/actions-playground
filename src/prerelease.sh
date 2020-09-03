@@ -29,7 +29,7 @@ FETCH=$(git fetch)
 GO=$(git log --pretty=%d --decorate)
 SO=$(echo "$GO" | sed -n 1p)
 AO=$(echo "$SO" | awk '{print substr($3, 1, length($3)-1)}')
-BRANCH=$(git log --pretty=%d --decorate | sed -n 1p | awk '{print substr($3, 1, length($3)-1)}')
+BRANCH=$(git log --pretty=%d --decorate | sed -n 1p | awk '{print substr($5, 1, length($5)-1)}')
 echo "Fetch: $FETCH"
 echo "GO: $GO"
 echo "SO: $SO"
