@@ -17,9 +17,12 @@ jobs:
           git config --global user.name "Michael Chiasson"
           git fetch
     - name: get branch name?
+      env:
+          AUTHOR: ${{ github.event.author.login }}
+          TGT: ${{ github.event.target_commitish }}
       run: |
-          echo "github.event.author: ${{ github.event.author }}"
-          echo "github.event.target_commitish: ${{ github.event.target_commitish }}"
+          echo "github.event.author: $AUTHOR"
+          echo "github.event.target_commitish: $TGT"
           echo "github.ref: ${{ github.ref }}"
           echo "github.payload: ${{ github.payload }}"
           echo "GITHUB_REF: $GITHUB_REF"
