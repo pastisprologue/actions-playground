@@ -8,19 +8,5 @@ jobs:
     container: 
         image: 'docker://michaelspark/ses'
     steps:
-    - uses: actions/checkout@v1
-      with:
-        repository: WildwoodCo/Spark_One_BL
-        ref: refs/heads/master
-        token: ${{ secrets.TOKEN }}
-    - uses: actions/checkout@v1
-      with:
-        path: ./longburn/
-        submodules: recursive
-        token: ${{ secrets.TOKEN }}
-    - name: BuildP3
+    - name: Build
       run: /ses/bin/emBuild -config Debug -project P3 -rebuild ./longburn.emProject
-    - name: BuildS1
-      run: /ses/bin/emBuild -config Release -project S1 -rebuild ./longburn.emProject
-      #    - name: Upload
-      #      run: ./src/dfu-firestore.sh
