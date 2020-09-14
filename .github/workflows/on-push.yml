@@ -8,5 +8,8 @@ jobs:
     container: 
         image: 'docker://michaelspark/ses'
     steps:
+    - uses: actions/checkout@v1
+      with:
+        path: ./longburn/
     - name: Build
       run: /ses/bin/emBuild -config Debug -project P3 -rebuild ./longburn.emProject
