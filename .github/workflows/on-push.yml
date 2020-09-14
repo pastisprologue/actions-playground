@@ -12,4 +12,4 @@ jobs:
       with:
         path: ./longburn/
     - name: Build
-      run: /ses/bin/emBuild -config Debug -project P3 -rebuild ./longburn.emProject
+      run: ls /ses/bin/
